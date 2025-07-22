@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Failure Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Failure Prediction</h1>
+        <form action="/predict" method="POST">
+    <input type="text" name="age" placeholder="Age" required>
+    <input type="text" name="anaemia" placeholder="Anaemia" required>
+    <input type="text" name="creatinine_phosphokinase" placeholder="Creatinine Phosphokinase" required>
+    <input type="text" name="diabetes" placeholder="Diabetes" required>
+    <input type="text" name="ejection_fraction" placeholder="Ejection Fraction" required>
+    <input type="text" name="high_blood_pressure" placeholder="High Blood Pressure" required>
+    <input type="text" name="platelets" placeholder="Platelets" required>
+    <input type="text" name="serum_creatinine" placeholder="Serum Creatinine" required>
+    <input type="text" name="serum_sodium" placeholder="Serum Sodium" required>
+    <input type="text" name="sex" placeholder="Sex" required>
+    <input type="text" name="smoking" placeholder="Smoking" required>
+    <input type="text" name="time" placeholder="Time" required>
+    <button type="submit">Predict</button>
+</form>
+
+        <div>
+            <h2>{{ prediction_text }}</h2>
+        </div>
+    </div>
+</body>
+</html>
